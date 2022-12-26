@@ -2,6 +2,9 @@ const express = require('express');
 
 const path = require('path');
 
+const rootDir = require('../utils/path');
+
+
 const fs = require('fs');
 
 
@@ -42,11 +45,12 @@ router.get('/users', (req, res, next) => {
             return res.send(data);
         }
     })
-    
+
 })
 
 router.get('/add-product', (req, res, next) => {
-   console.log(path.join(__dirname,'./views','add-product.html'));
+    // console.log(rootDir+'/views/add-product.html');
+    //    console.log(path.join(rootDir,'./views','add-product.html'));
     res.sendFile(path.join(__dirname, '../', 'views', 'add-product.html'))
 });
 
